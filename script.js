@@ -59,7 +59,7 @@ var h5 = new bar([79], [79],"h5");
 var h6 = new bar([87], [87],"h6");
 var h7 = new bar([95], [95],"h7");
 
-var d1 = new bar([216], [216],"d1",h4);
+var d1 = new bar([216], undefined,"d1",h4);
 var d2 = new bar([348], [271],"d2",h5);
 var d3 = new bar([337], [249],"d3",h6);
 var d4 = new bar([326], [183],"d4",h7);
@@ -162,6 +162,7 @@ var visionToggle = function(api, classID, nodeSet, visionNodes) {
             changeColor("#open", "white");
             changeColor("#agg", "blue");
             e3.color(e3.clicked, e3.classID, "red");
+            d1.color(d1.clicked, d1.classID, "red");
         }
     })
 }
