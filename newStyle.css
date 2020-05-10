@@ -34,16 +34,20 @@ div.buttons {
     color: white;
 	width: 60%;
     margin-left: 15em;
-    margin-top: 10em;
+    margin-top: 7em;
 }
-div.styles{
+.styles{
     float: left;
 }
 
-div.selectedOptions {
+.selectedOptions {
     margin-left: 35em;
-    width: 100px;
+	width: 100px;
 }
+#spacer{
+	color: black;
+}
+
 
 
 #model-frame{
