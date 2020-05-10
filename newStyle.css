@@ -1,0 +1,54 @@
+* {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+body {
+    width: 100%;
+	height: 100%;
+	margin: 0px;
+	background-color: black;
+	text-align: center;
+}
+
+.main {
+    width: 1200px;
+	height: 1000px;
+	margin: auto;
+	padding: 60px 90px;
+	box-sizing: border-box;
+}
+
+div#content {
+    color: white;
+    width: 60%;
+    float: left;
+}
+
+div.buttons {
+    float: top;
+    color: white;
+	width: 60%;
+    margin-left: 15em;
+    margin-top: 10em;
+}
+div.styles{
+    float: left;
+}
+
+div.selectedOptions {
+    margin-left: 35em;
+    width: 100px;
+}
+
+
+#model-frame{
+    width: 420px;
+	height: 315px;
+	border: none;
+}
+
