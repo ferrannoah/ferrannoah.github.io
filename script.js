@@ -180,7 +180,7 @@ var buttonToggle = function(api, classID, nodeSet) {
 
 var barToggle = function(api, classID, nodeSet) { 
     document.getElementById(classID).addEventListener('click', function(){
-        nodeSet.color(false, nodeSet.classID);
+        nodeSet.color(nodeSet.clicked, nodeSet.classID);
         if(vision == "open" && nodeSet.op == 0){
             nodeSet.color(nodeSet.clicked, nodeSet.classID, "red")
         }
@@ -208,14 +208,22 @@ var barToggle = function(api, classID, nodeSet) {
                 
                 for(var i=0;i<diagNodes.length;i++){
                     if(nodeSet == v1){
-                        diagNodes[i].color(diagNodes[i].clicked,diagNodes[i].classID);
-                        diagNodes[i].redOut(false);
+                        if(diagNodes[i].ag == 0){
+                            diagNodes[i].color(diagNodes[i].clicked,diagNodes[i].classID, "red");
+                        } else{
+                            diagNodes[i].color(diagNodes[i].clicked,diagNodes[i].classID);
+                            diagNodes[i].redOut(false);
+                        }
                     }
                 }
                 for(var i=0;i<diagNodes.length;i++){
                     if(nodeSet == diagNodes[i].needSet){
-                        diagNodes[i].color(diagNodes[i].clicked,diagNodes[i].classID);
-                        diagNodes[i].redOut(false);
+                        if(diagNodes[i].ag == 0){
+                            diagNodes[i].color(diagNodes[i].clicked,diagNodes[i].classID, "red");
+                        } else{
+                            diagNodes[i].color(diagNodes[i].clicked,diagNodes[i].classID);
+                            diagNodes[i].redOut(false);
+                        }
                     }
                 }
             }
@@ -258,7 +266,13 @@ var barToggle = function(api, classID, nodeSet) {
 
 var barToggleDiag = function(api, classID, nodeSet, needSet) { 
     document.getElementById(classID).addEventListener('click', function(){
-        if(!nodeSet.clicked && ( v1.clicked || needSet.clicked)){
+        if(vision == "open" && nodeSet.op == 0){
+            nodeSet.color(nodeSet.clicked, nodeSet.classID, "red")
+        }
+        else if(vision == "agg" && nodeSet.ag == 0){
+            nodeSet.color(nodeSet.clicked, nodeSet.classID, "red")
+        }
+        else if(!nodeSet.clicked && ( v1.clicked || needSet.clicked)){
             if(vision == "open"){
                 showSet(api, nodeSet.op)
             }
@@ -279,6 +293,7 @@ var barToggleDiag = function(api, classID, nodeSet, needSet) {
             if(!nodeSet.red){
                 nodeSet.color(nodeSet.clicked, nodeSet.classID);
             }
+            nodeSet.clickCase(false);
         }
     })
 }
