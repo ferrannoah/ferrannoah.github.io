@@ -10,8 +10,8 @@ var cost = 50;
 var costHTML = document.getElementById("cost");
 var vision = null;
 var nodes = [3,194,143,403,127,135,151,159,167,175,227,238,293,304,381,392,55,63,71,79,87,95,414,14,25,103,183,205,216,249,260,271,282,315,326,337,348,359,370];
-var aggressiveStart = [36,55,63,111,47,151,135];
-var openStart = [36,63,71,111,47,175,159];
+var aggressiveStart = [36,55,63,111,47,151,143];
+var openStart = [36,63,71,111,47,175,167];
 var red = 0;
 
 class bar{
@@ -83,8 +83,8 @@ var e4 = new bar([381],[293],"e4",10);
 var e5 = new bar([392],[304],"e5",10);
 
 var allNodes = [v1,v2,v3,v4,v5,h3,h4,h5,h6,h7,d1,d2,d3,d4,d5,d6,d7,e1,e2,e3,e4,e5];
-var openNodes = [h3,h4,v1,v3];
-var aggNodes = [h3,v1,v3];
+var openNodes = [h3,h4,v1,v5];
+var aggNodes = [h3,v1,v5];
 var diagNodes = [d1,d2,d3,d4,d5,d6];
 var vertNodes = [v2,v3,v4,v5];
 var horizNodes = [h3,h4,h5,h6,h7];
@@ -175,7 +175,6 @@ var checkDiag = function(api){
             }
         }
         if(diagNodes[i].needSet == null){
-            console.log("null")
         }
         else if((red != 1 && !diagNodes[i].needSet.clicked)){
             if(!v1.clicked){
@@ -251,7 +250,7 @@ var visionToggle = function(api, classID, nodeSet, visionNodes) {
             checkDiag(api);
             h3.color(h3.clicked, h3.classID, "red");
             h3.clickCase(false);
-            cost = 120;
+            cost = 135;
             
         } else if(classID == 'agg'){
             vision = "ag";
@@ -260,7 +259,7 @@ var visionToggle = function(api, classID, nodeSet, visionNodes) {
             e3.color(e3.clicked, e3.classID, "red");
             checkDiag(api);
             d1.color(d1.clicked, d1.classID, "red");
-            cost = 120;
+            cost = 135;
         }
         
         costHTML.innerHTML = "Cost: $" + cost;
@@ -299,18 +298,8 @@ var barToggle = function(api, classID, nodeSet){
 
 var getScreenShot = function(api, classID, document) {
     document.getElementById(classID).addEventListener('click', function(){
-        console.log("finished");
-        api.getFov(function(err, fov) {
-            if(!err) {
-                console.log(fov);
-            }
-        });
         api.recenterCamera(function(err) {
             console.log(err);
-        });
-        api.getCameraLookAt(function(err, camera) {
-            console.log(camera.position);
-            console.log(camera.target);
         });
         api.setCameraLookAt(
             [0.013520359992979906, -9.266796183303377, 4.847950876449167], // eye position
