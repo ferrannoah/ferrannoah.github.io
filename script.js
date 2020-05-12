@@ -265,6 +265,9 @@ var visionToggle = function(api, classID, nodeSet, visionNodes) {
 var barToggle = function(api, classID, nodeSet){
     document.getElementById(classID).addEventListener('click',function(){
         
+	if(vision == ag){
+		d1.color(d1.clicked, d1.classID, "red");
+	}
         if(nodeSet.able && nodeSet.getVision(vision) != 0){
             if(!nodeSet.clicked){
                 showSet(api, nodeSet.getVision(vision));
