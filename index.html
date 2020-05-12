@@ -7,31 +7,34 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Mask Builder V:1</title>
 </head>
-<body>
+<body id = "body">
     <div class = "main">
         <div id = "content">
-            <img width="275" height="66" id="tag-logo" src="ferrannoah.github.io/BAMaskLogo.png" />
+            <img width="275" height="66" id="tag-logo" src="C:/Users/ferra/Documents/GitHub/ferrannoah.github.io/BAMaskLogo.png" />
             <h1 id="content-title">Badass Mask Builder</h1>
             <iframe src="" id="model-frame" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+            <h1 class = "costClass" id="cost">50</h1>
+            
         </div>
         <div class="buttons">
+            
             <div class = "styles">
                 <h1 id="style-header">Vision Style</h1>
                 <p id="open">Open</p>
                 <p id="agg">Aggresive</p>
-                <h1>Wire Style</h1>
-                <p id="horiz">Horizontals</p>
-                <p id="vert">Verticals</p>
-                <p id="diag">Diagonals</p>
-                <p id="eye">Eye Guards</p>
+                <h1 class="Style" id="wire">Wire Style</h1>
+                <p class="Style" id="horiz">Horizontals</p>
+                <p class="Style"id="vert">Verticals</p>
+                <p class="Style"id="diag">Diagonals</p>
+                <p class="Style"id="eye">Eye Guards</p>
             </div>
-            <div class = selectedOptions>
-                <li id=spacer>spacer</li>
-		<h2>Bar Options</h2>
+            <div class="selectedOptions">
+                <br>
+                <h2 class="Style"id = "bar">Bar Options</h2>
             </div>
         </div>
     </div>
     <script src="https://static.sketchfab.com/api/sketchfab-viewer-1.0.0.js"></script>
-	<script src = "ferrannoah.github.io/script.js"></script>
+	<script src = "newScript.js"></script>
 </body>
 </html>
