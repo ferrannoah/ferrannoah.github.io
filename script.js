@@ -56,7 +56,7 @@ class bar{
     }
 }
 
-var v1 = new bar([175],[151],"v1",10);
+var v1 = new bar([175],0,"v1",10);
 var v2 = new bar([227],[3],"v2",20);
 var v3 = new bar([159],[135],"v3",20);
 var v4 = new bar([238],[127],"v4",20);
@@ -101,11 +101,11 @@ var addText = function (startNum, numOfButtons, classHeader, className, idName, 
 }
 
 addButtons(1,5, ".selectedOptions", "verticals", "v", "Vertical");
-addText(6, 6, ".selectedOptions", "verticals", "v", "Vertical Bars cannot intersect with diag bars")
+//addText(6, 6, ".selectedOptions", "verticals", "v", "Vertical Bars cannot intersect with diag bars")
 addButtons(3, 7, ".selectedOptions", "horizontals", "h", "Horizontal");
-addText(8, 8, ".selectedOptions", "horizontals", "h", "A Horizontal Bar Must be visible to have Diag bars")
+//addText(8, 8, ".selectedOptions", "horizontals", "h", "A Horizontal Bar Must be visible to have Diag bars")
 addButtons(1, 7, ".selectedOptions", "diagonals", "d", "Diagonal");
-addText(8, 8, ".selectedOptions", "diagonals", "d", "Diagonal bars mustn't intersect with veritcal bars, and a horizontal bar has to be selected")
+//addText(8, 8, ".selectedOptions", "diagonals", "d", "Diagonal bars mustn't intersect with veritcal bars, and a horizontal bar has to be selected")
 addButtons(1, 5, ".selectedOptions", "eyeguards", "e", "Eye Guard")
 
 var hideSet = function(api, nodeSet){
@@ -245,6 +245,7 @@ var visionToggle = function(api, classID, nodeSet, visionNodes) {
             vision = "op";
             changeColor("#open", "blue");
             changeColor("#agg", "white");
+            checkDiag(api);
             h3.color(h3.clicked, h3.classID, "red");
             cost = 120;
             
@@ -253,11 +254,11 @@ var visionToggle = function(api, classID, nodeSet, visionNodes) {
             changeColor("#open", "white");
             changeColor("#agg", "blue");
             e3.color(e3.clicked, e3.classID, "red");
+            checkDiag(api);
             d1.color(d1.clicked, d1.classID, "red");
             cost = 120;
-            
         }
-        checkDiag(api);
+        
         costHTML.innerHTML = "Cost: $" + cost;
     })
 }
@@ -265,9 +266,6 @@ var visionToggle = function(api, classID, nodeSet, visionNodes) {
 var barToggle = function(api, classID, nodeSet){
     document.getElementById(classID).addEventListener('click',function(){
         
-	if(vision == ag){
-		d1.color(d1.clicked, d1.classID, "red");
-	}
         if(nodeSet.able && nodeSet.getVision(vision) != 0){
             if(!nodeSet.clicked){
                 showSet(api, nodeSet.getVision(vision));
@@ -288,6 +286,7 @@ var barToggle = function(api, classID, nodeSet){
         if(nodeSet.able && nodeSet.getVision(vision) != 0){
             nodeSet.color(nodeSet.clicked,nodeSet.classID);
         }
+        d1.color(d1.clicked, d1.classID, "red");
         costHTML.innerHTML = "Cost: $" + cost;
     });
 }
