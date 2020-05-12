@@ -56,7 +56,7 @@ class bar{
     }
 }
 
-var v1 = new bar([1750[150,"v1",10);
+var v1 = new bar([175],[151],"v1",10);
 var v2 = new bar([227],[3],"v2",20);
 var v3 = new bar([159],[135],"v3",20);
 var v4 = new bar([238],[127],"v4",20);
