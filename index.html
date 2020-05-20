@@ -3,38 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="newStyle.css">
+    
+    <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <title>Mask Builder V:1</title>
+    <title>Document</title>
 </head>
-<body id = "body">
-    <div class = "main">
+<body>
+    <div class="main">
         <div id = "content">
             <img width="275" height="66" id="tag-logo" src="ferrannoah.github.io/BAMaskLogo.png" />
             <h1 id="content-title">Badass Mask Builder</h1>
+            <p id="colorText">MaskID:<input type="text" id = "colorInput"></p>
             <iframe src="" id="model-frame" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-            <h1 class = "costClass" id="cost"></h1>
-            
-        </div>
-        <div class="buttons">
-            
-            <div class = "styles">
-                <h1 id="style-header">Vision Style</h1>
-                <p id="open">Open</p>
-                <p id="agg">Aggresive</p>
-                <h1 class="Style" id="wire">Wire Style</h1>
-                <p class="Style" id="horiz">Horizontals</p>
-                <p class="Style"id="vert">Verticals</p>
-                <p class="Style"id="diag">Diagonals</p>
-                <p class="Style"id="eye">Eye Guards</p>
-            </div>
-            <div class="selectedOptions">
-                <br>
-                <h2 class="Style"id = "bar">Bar Options</h2>
-            </div>
+            <button type="submit" id = "sumbit" onclick="showMaskID(document)">Sumbit Mask</button>
         </div>
     </div>
-    <script src="https://static.sketchfab.com/api/sketchfab-viewer-1.0.0.js"></script>
-	<script src = "ferrannoah.github.io/script.js"></script>
 </body>
+    <script src="https://static.sketchfab.com/api/sketchfab-viewer-1.0.0.js"></script>
+    <script src="ferrannoah.github.io/script.js"></script>
 </html>
