@@ -69,6 +69,18 @@ div.buttons {
 	border: 1px;
 	
 }
+#submit {
+    display:inline-block;
+    color:#444;
+    border:1px solid #CCC;
+    background:#DDD;
+    box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+    cursor:pointer;
+    vertical-align:middle;
+    max-width: 100px;
+    padding: 5px;
+    text-align: center;
+}
 
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -81,7 +93,7 @@ div.buttons {
             <h1 id="content-title">Badass Mask Builder</h1>
             <p id="colorText">MaskID:<input type="text" id = "colorInput"></p>
             <iframe src="" id="model-frame" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-            <button type="submit" id = "sumbit" onclick="showMaskID(document)">Sumbit Mask</button>
+            <div id = "submit" onclick="showMaskID(document)">Submit</div>
         </div>
     </div>
 </body>
