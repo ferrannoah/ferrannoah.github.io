@@ -60,7 +60,7 @@ var showMaskID = function(document){
             })
         },
         error: function onError() {
-        console.log('Viewer Error');
+        console.log('Viewer error');
         }
     });
 
