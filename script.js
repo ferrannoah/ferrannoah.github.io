@@ -12,8 +12,7 @@ var clicked;
 
 async function paste() {
     const text = await navigator.clipboard.readText();
-    console.log(text);
-    document.getElementById("in").value = text;
+    document.getElementById("colorInput").value = text;
 }
 
 var hideSet = function(api, nodeSet){
