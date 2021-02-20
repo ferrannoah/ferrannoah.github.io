@@ -29,6 +29,7 @@ var showSet = function(api, nodeSet){
 
 var showMaskID = function(document){
     document.getElementById("submit").style.display = "none";
+    document.getElementById("submit1").style.display = "none";
     input = $("#colorInput").val();
     if(input == 0){
         alert("Input a maskID to show your mask");
