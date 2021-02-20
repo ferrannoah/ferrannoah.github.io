@@ -9,11 +9,12 @@ var client = new Sketchfab( version, iframe);
 var newMask = [];
 var nodes = [2,21,35,49,63,77,96,115,129,143,157,171,185,199,213,232,251,265,284,298,317,331,350,369,397,411,430,444,458,477,496,510,529,548,581,600,628,642,656,675,689,708,727,746,760,774,793,807,840,859,878,897,916,935,954,973,992,1011];
 var clicked;
-var allowPaste = function(e){
-  e.stopImmediatePropagation();
-  return true;
-};
-document.addEventListener('paste', allowPaste, true);
+
+async function paste() {
+    const text = await navigator.clipboard.readText();
+    console.log(text);
+    document.getElementById("in").value = text;
+}
 
 var hideSet = function(api, nodeSet){
     for(var i=0;i<nodeSet.length;i++){
